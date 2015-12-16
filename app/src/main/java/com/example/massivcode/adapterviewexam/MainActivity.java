@@ -38,16 +38,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private UnitAdapter mAdapter;
-    private ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 데이터를 초기화 하는 메소드
         initData();
+        // 어댑터를 생성
         mAdapter = new UnitAdapter(mData, getApplicationContext());
-        mListView = (ListView)findViewById(R.id.listview);
-        mListView.setAdapter(mAdapter);
+        // 리스트 뷰에 어댑터를 설정
+        ListView listView = (ListView)findViewById(R.id.listview);
+        listView.setAdapter(mAdapter);
     }
 }
