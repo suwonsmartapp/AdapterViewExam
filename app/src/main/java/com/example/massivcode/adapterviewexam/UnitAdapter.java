@@ -51,19 +51,13 @@ public class UnitAdapter extends BaseAdapter {
 
         if(convertView == null) {
             convertView = mLayoutInflater.inflate(R.layout.item_layout, parent, false);
-            Unit unit = (Unit) getItem(position);
-            TextView title = (TextView) convertView.findViewById(R.id.item_title_tv);
-            TextView contents = (TextView) convertView.findViewById(R.id.item_contents_tv);
-            title.setText(unit.getRace());
-            contents.setText(unit.getName());
-
-        } else {
-            Unit unit = (Unit) getItem(position);
-            TextView title = (TextView) convertView.findViewById(R.id.item_title_tv);
-            TextView contents = (TextView) convertView.findViewById(R.id.item_contents_tv);
-            title.setText(unit.getRace());
-            contents.setText(unit.getName());
         }
+
+        Unit unit = (Unit) getItem(position);
+        TextView title = (TextView) convertView.findViewById(R.id.item_title_tv);
+        TextView contents = (TextView) convertView.findViewById(R.id.item_contents_tv);
+        title.setText(unit.getRace());
+        contents.setText(unit.getName());
 
         return convertView;
     }
